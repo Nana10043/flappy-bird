@@ -1,0 +1,55 @@
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+body {
+  background:#2c3e50;
+  display:flex; align-items:center; justify-content:center;
+  min-height:100vh; font-family:system-ui,-apple-system,sans-serif;
+  overflow:hidden;
+}
+#gameWrap {
+  position:relative;
+  width:360px; height:520px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+  border-radius:12px; overflow:hidden;
+}
+canvas {
+  display:block; width:100%; height:100%;
+  background:linear-gradient(to bottom, #70c5ce 0%, #70c5ce 60%, #ded895 60%, #73bf2e 100%);
+}
+
+/* 覆盖层 */
+.overlay {
+  position:absolute; inset:0; display:none;
+  align-items:center; justify-content:center;
+  background:rgba(0,0,0,.35); backdrop-filter:blur(3px);
+}
+.overlay.show { display:flex; }
+.panel {
+  background:rgba(255,255,255,.95);
+  padding:30px 36px; border-radius:20px; text-align:center;
+  box-shadow:0 12px 40px rgba(0,0,0,.3);
+  animation:pop .35s ease;
+}
+@keyframes pop { from{transform:scale(.7);opacity:0} to{transform:scale(1);opacity:1} }
+.panel h1 { font-size:28px; color:#f39c12; margin-bottom:12px; }
+.panel h2 { font-size:24px; color:#e74c3c; margin-bottom:16px; }
+.tip { font-size:14px; color:#666; line-height:1.8; margin-bottom:20px; }
+.result p { font-size:16px; margin:6px 0; color:#333; }
+.result b { color:#e67e22; font-size:20px; }
+.panel button {
+  margin-top:16px; padding:12px 32px; border:none; border-radius:30px;
+  background:linear-gradient(135deg,#f39c12,#e74c3c);
+  color:#fff; font-size:16px; font-weight:700; cursor:pointer;
+  box-shadow:0 4px 14px rgba(231,76,60,.4); transition:.2s;
+}
+.panel button:active { transform:scale(.95); }
+
+/* HUD 分数 */
+.hud {
+  position:absolute; top:20px; left:0; width:100%;
+  text-align:center; display:none; pointer-events:none;
+}
+.hud.show { display:block; }
+#score {
+  font-size:52px; font-weight:900; color:#fff;
+  text-shadow:0 4px 8px rgba(0,0,0,.4);
+}

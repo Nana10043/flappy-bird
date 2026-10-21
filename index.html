@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Flappy Bird</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="gameWrap">
+  <canvas id="game" width="360" height="520"></canvas>
+
+  <!-- 开始界面 -->
+  <div id="startScreen" class="overlay show">
+    <div class="panel">
+      <h1>🐦 Flappy Bird</h1>
+      <p class="tip">点屏幕 / 按空格 让小鸟飞起来<br>穿过管道，别掉下去！</p>
+      <button id="startBtn">开始游戏</button>
+    </div>
+  </div>
+
+  <!-- 游戏中 HUD -->
+  <div id="hud" class="hud">
+    <span id="score">0</span>
+  </div>
+
+  <!-- 结算界面 -->
+  <div id="overScreen" class="overlay">
+    <div class="panel">
+      <h2>💥 游戏结束</h2>
+      <div class="result">
+        <p>本局得分：<b id="finalScore">0</b></p>
+        <p>最高纪录：<b id="bestScore">0</b></p>
+      </div>
+      <button id="restartBtn">再来一次</button>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
